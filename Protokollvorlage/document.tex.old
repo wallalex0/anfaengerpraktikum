@@ -1,0 +1,224 @@
+% Article, einseitig. Für kürzere Dokumente.
+\documentclass[11pt,titlepage,a4paper, ngerman] {scrartcl}
+
+\usepackage{ifpdf}                     
+\usepackage[T1]{fontenc}               
+%\usepackage[latin1]{inputenc}        
+% Dieses TeX-Dokument ist latin-1 codiert. (Windows)
+\usepackage[utf8]{inputenc}         
+% Dieses TeX-Dokument ist utf-8 codiert. (Linux)
+
+% Mathe-Pakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%\usepackage{palatino}            % andere Schriftart
+\usepackage[ngerman]{babel}       % Deutsch !
+
+\usepackage{color}                
+\usepackage{graphicx}             % Bilder einbinden ermöglichen
+
+\usepackage{cite}                 % Besser zitieren: -> [1-3, 6-8]
+\usepackage{url}                  % Besserew
+\usepackage[textsize=small, textwidth=0.8in]{todonotes} % \todo noch zu tun
+
+\usepackage{multirow}             % Zusammenfassen von Tabellenzellen 
+                                  % \multicolumn und \multirow
+\usepackage{upgreek}              % nicht-kursive Griechische Buchstaben
+\usepackage{textcomp}             % \textperthousand  (promille)
+\usepackage{rotating}             % rotierte Information
+
+\usepackage[format=plain,indention=1cm,scriptsize,font=sf ,labelfont=bf,
+  nooneline]{caption} 
+                                  % modif Bildunterschriften 
+\renewcommand{\captionfont}{\small \sffamily \slshape} 
+\renewcommand{\captionlabelfont}{\small \sffamily \slshape \bfseries   }
+
+% Kontrolle der Seitenränder:
+\usepackage[inner=3.5cm, outer=3cm, top=3cm, bottom=2cm, includehead, includefoot]{geometry}
+\clubpenalty=10000   % letzte Zeile einer Seite nicht erste Zeile eines Absatzes
+\widowpenalty=10000  % letzte Zeile eines Absatzes nicht erste Zeile einer Seite
+
+% Eigene Kopf/Fußzeilen
+% \pagestyle{fancy}
+
+% Standard:
+%\fancyhead[EL]{\thepage}
+%\fancyhead[ER]{\slshape \nouppercase{\leftmark}}
+%\fancyhead[OL]{\slshape \nouppercase{\rightmark}}
+%\fancyhead[OR]{\thepage}
+
+% Fußzeile: Datum,  Seine X von Y, gut während des Schreibens:
+%\fancyfoot[EC, OC]{}%{\today{} $\ \ast\ast\ast\ $ Seite \thepage{}  von \pageref{LastPage}}
+
+\usepackage{hyperref}                            %macht anklickbare Links
+\definecolor{LinkColor}{rgb}{0,0,0.75}           %dunkelblau
+%\definecolor{LinkColor}{rgb}{0,0,0}             %schwarz
+
+\hypersetup{
+	pdftitle = {LaTeX-Vorlage},
+	pdfsubject = {LaTeX-Vorlage},
+	pdfkeywords = {LaTeX, Vorlage, Uni Wuppertal},
+	pdfauthor = {Ich},
+	bookmarksnumbered = true,
+	bookmarksopen = false,
+	colorlinks = false,
+	hypertexnames = true,
+	a4paper = true,
+	colorlinks=true,%
+	linkcolor=LinkColor,%
+	citecolor=LinkColor,%
+	filecolor=LinkColor,%
+	menucolor=LinkColor,%
+	pagecolor=LinkColor,%
+	urlcolor=LinkColor,
+	breaklinks=true	
+}
+
+%###########################################################################################
+
+% neue Kommandos für die Titelseite
+\newcommand{\titel} {FP 1 Stern-Gerlach Experiment}
+
+\newcommand{\autoren}{Walther Stern und Otto Gerlach}
+\newcommand{\betreuer}{Helmut Merkel M.Sc., Dr. Angela Kohl }
+
+\newcommand{\datum}{\today}
+\newcommand{\abstracttext}
+  { 
+   Ein Abstract ist eine
+   gekŸrzte prŠzise Darstellung des Inhalts eines Dokuments. }
+\begin{document}                                       
+
+\pagestyle{empty}
+
+% spezielle Titelseite für das FP
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage 
+%Sorgt dafür, daß alle ausstehenden Grafiken und Tabellen jetzt eingefügt
+%werden, um auf einer neuen Seite ohne "Altlasten" fortzufahren
+
+\section{Einleitung}
+Hier steht eine knappe Einleitung in die Thematik und die wesentliche
+Theorie/Formeln. Auch erste Verweise auf grundlegende Literatur
+\cite{SternGerlach}.
+%\autoref{SternGerlach}
+Vergleichen Sie auch \cite{wissarbeit}
+
+\subsection{Ein Unterkapitel} \label{kap:unterKap}
+(Es ist übrigens guter Ton, zwischen solche Überschriften immer etwas Text zu setzen)
+\subsubsection{Ein UnterUnterkapitel}
+(Alles nur zum Test)
+\subsubsection{Noch Ein UnterUnterkapitel}
+\label{kap:unterunterKap}
+
+\section{Experiment und Durchführung}
+Hier steht die Dokumentation des Experiments und evtl. wichtige 
+Bemerkungen zur Durchführung der Messung.
+
+Statt dessen stehen hier einige wichtige Beispiele.
+\begin{figure}[tbhp]
+ \centering
+ \includegraphics[angle=270, width=5cm]{sinus} 
+% Die Dateiendung fehlt, es wird automatisch das eps oder pdf gewählt
+% in eckigen Klammern steht eine Kurzbezeichnung, wie sie in einem 
+% Abbildungsverzeichnis stehen könnte:
+ \caption[Kurz: Eine Sinuskurve]{Lang: Dieses Bild zeigt eine Sinuskurve mit 
+gut drei periodischen Schwingungen. Es ist 5\,cm breit. Das Bild mußte um 
+270\textdegree  gedreht werden.}
+% Wichtig: das \caption erstellt eine Nummer für das Bild, 
+% erst dann kann man ein label setzen!
+ \label{fig:sinus}
+\end{figure}
+
+\begin{figure}  
+ \centering
+ \includegraphics[angle=270, width=0.25\linewidth]{sinus}
+  \caption{Dieses Bild misst 25\%  der Textbreite}
+ \label{fig:sinus2}
+\end{figure}
+Schlecht ist, dass dieses Bild keine Achsenbeschriftung hat!
+
+\begin{table}
+ %Auch hier unterschiedliche Texte für Überschrift und Verzeichnis:
+  \caption[Die einzige Tabelle hier]{Eine Tabelle mit linksbündiger, 
+zentrierter und rechtsbündiger Spalte. Sie steht als erstes auf dieser 
+Seite, obwohl sie im Quelltext nach \autoref{fig:sinus} und \autoref{fig:sinus2} steht.}
+  \centering
+  \begin{tabular}{|l||c|r|}
+  \hline
+    A & B & $\Gamma$\\
+    \hline
+    \hline
+    \hline
+    ddd & eee & $\pi$\\
+    \hline
+    $\Pi$ & h & i\\
+  \hline 
+  \end{tabular}
+\end{table}
+
+
+\section{Formeln}
+
+
+\begin{align}
+ \int_V\rho\,dV&=m   \\
+ c^2&=a^2+b^2 \nonumber \\
+ \chi&=5
+\end{align}
+
+\begin{xalignat*}{2}
+ A &= B   &\qquad  B &= C \\ 
+ C &= D   &\qquad  D &= E 
+\end{xalignat*}
+
+\begin{gather}
+ A = B   \\ 
+ A+B  = D
+\end{gather}
+
+\begin{equation}
+  \begin{split}
+ A &= B   \\ 
+   &= E
+  \end{split}
+\end{equation}
+
+\begin{multline}
+\text{Dies ist eine}\\
+\text{unheimlich \qquad}\\
+\text{\qquad längliche}\\
+\text{Gleichung}
+\end{multline}
+
+Der Rest steht für sich selbst:
+
+\section{Experiment und Durchführung}
+
+\section{Auswertung}
+
+\section{Diskussion}
+
+\section{Zusammenfassung}
+
+\vfill
+
+\begin{thebibliography}{12345}
+
+%-------------------------------------------------------
+\bibitem{SternGerlach} 
+Walther Gerlach und Otto Stern, Zeit. für Physik A, Vol9, Nr. 1, Dezember 1922.
+\url{http://www.springerlink.com/content/p72218361287275g/}
+\bibitem{wissarbeit}
+\url{http://de.wikipedia.org/wiki/Wissenschaftliche_Publikation}
+\end{thebibliography}
+
+
+\end{document}
+
+

@@ -1,0 +1,58 @@
+%definiere packages, die im Protokoll benutzt werden
+\usepackage{ifpdf}    
+\usepackage[T1]{fontenc}          % nutze LaTeX Fonts in westeuropäischer Codierung   
+\usepackage[utf8]{inputenc}       % setzte Input Codierung auf utf8 - Text muss utf8 kodiert sein!                
+
+% Mathe-Pakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[ngerman]{babel}       % Deutsch, neue Trennung !
+
+\usepackage{color}                % es kann bunt werden 
+\usepackage{graphicx}             % Bilder einbinden ermÃÂ¶glichen
+
+\usepackage{cite}                 % Besser zitieren: -> [1-3, 6-8]
+
+%\usepackage[textsize=small, textwidth=0.8in]{todonotes} % \todo noch zu tun
+
+\usepackage{multirow}             % Zusammenfassen von Tabellenzellen 
+                                  % \multicolumn und \multirow
+\usepackage{upgreek}              % nicht-kursive Griechische Buchstaben
+\usepackage{textcomp}             % \textperthousand  (promille)
+\usepackage{rotating}             % rotierte Information
+
+% das ist nur der Schönheit halber für die Bildunter-/Tabellenüberschriften !
+\usepackage[format=plain,indention=1cm,scriptsize,font=sf ,labelfont=bf,
+  nooneline]{caption} 
+                                  % modif Bildunterschriften 
+\renewcommand{\captionfont}{\small \sffamily \slshape} 
+\renewcommand{\captionlabelfont}{\small \sffamily \slshape \bfseries   }
+
+% Kontrolle der Seitenränder:
+\usepackage[inner=3.5cm, outer=3cm, top=3cm, bottom=2cm, includehead, includefoot]{geometry}
+\clubpenalty=10000   % letzte Zeile einer Seite nicht erste Zeile eines Absatzes
+\widowpenalty=10000  % letzte Zeile eines Absatzes nicht erste Zeile einer Seite
+
+% für Hyperlinks
+\usepackage{hyperref}                            %macht anklickbare Links
+\definecolor{LinkColor}{rgb}{0,0,0.75}           %dunkelblau
+\hypersetup{
+	pdftitle = {LaTeX-Vorlage},
+	pdfsubject = {LaTeX-Vorlage},
+	pdfkeywords = {LaTeX, Vorlage, Uni Wuppertal},
+	pdfauthor = {Ich},
+	bookmarksnumbered = true,
+	bookmarksopen = false,
+	colorlinks = false,
+	hypertexnames = true,
+	a4paper = true,
+	colorlinks=true,%
+	linkcolor=LinkColor,%
+	citecolor=LinkColor,%
+	filecolor=LinkColor,%
+	menucolor=LinkColor,%
+	pagecolor=LinkColor,%
+	urlcolor=LinkColor,
+	breaklinks=true	
+}

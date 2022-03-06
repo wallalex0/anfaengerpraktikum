@@ -1,0 +1,45 @@
+\section{Formeln}
+Für Formeln sollte man unbedingt \AmS\TeX\  verwenden, das ist einfach zu bedienen und liefert bessere Ergebnisse als Standard-\LaTeX.
+
+Dies macht der Befehl \textsf{align}.
+% Achtung hier dürfen keine Lehrzeilen eingeführt werden !
+\begin{align}
+ \int_V\rho\,dV&=\sum_{i=1}^n m_i \quad=\quad M  \\
+\intertext{Tiefer stellt man durch ein vorgestelltes underline (\_), höher durch Circumflex \^{}. Mehrere 
+Buchstaben muss man in eine geschweifte Klammer einbinden.}
+  S &= k\cdot\log{W} \\
+\intertext{Vor Funktionen steht immer ein Backslash, z.B. \textsf{\textbackslash exp, \textbackslash sin}:}  
+ c^2&=a^2+b^2 \nonumber \\
+\intertext{Oben ist mit \textsf{\textbackslash nonumber} die Numerierung unterdrückt. }
+ \chi&=5 \\
+  x &= y &= z \label{zeile4}\\
+  z &= a &= 1 \label{zeile5}
+\end{align}
+In Zeile \ref{zeile4} und \ref{zeile5} stehen mehrere Gleichheitszeichen übereinander.
+Das geht schöner mit einem \textsf{alignat*} ohne Gleichngsnummern (macht der *).
+\begin{xalignat*}{2}
+ A &= B   &\qquad  B &= C \\ 
+ C &= D   &\qquad  D &= E 
+\end{xalignat*}
+%\quad und \qquad machen Abstände
+Die folgenden Gleichungen sind mit  \textsf{gather} zentriert untereinander geschrieben:
+\begin{gather}
+ A = B   \\ 
+ A+B  = D
+\end{gather}
+Hiermit kann man mehrere Gleichungen übereinander mit nur einer Gleichungsnummer schreiben
+\begin{equation}
+  \begin{split}
+ A &= B   \\ 
+   &= T
+  \end{split}
+\end{equation}
+Wenn man mal eine wirklich lange Gleichung hat benutzt man \textsf{multline}.
+\begin{multline}
+\text{Dies ist eine}\\
+\text{wirklich\qquad\qquad}\\
+\text{unheimlich}\\
+\text{\qquad\qquad l\"angliche}\\
+\text{Gleichung}
+\end{multline}
+

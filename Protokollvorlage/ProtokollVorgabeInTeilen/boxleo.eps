@@ -1,0 +1,148 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0.000000 0.000000 144.000000 750.000000
+%%Creator:giftoeps
+%
+%Bergischer Loewe nach Prof. K. Winterhager (.EPS Version)
+%Signet der Bergischen Universitaet-Gesamthochschule Wuppertal
+%
+%Vertikale Groesse: 729 Punkt = 729/72 inch = 257 mm
+%ABER: mit scale 0.0675 (Skalierungsfaktor 0.0675 also)
+%auf 205/300 inch = 17,145 mm skaliert (Typische Groesse des Loewen)
+%
+%Bei Einbinden in TEX hscale=100 und vscale=100 setzen
+%
+%Druckerraster beachten! Laserprinter = 1/300 inch
+%Skalierung auf 205/300 inch vermeidet Interferenzeffekte 
+%(ungleichmaessiger Abstand zwischen den Komponenten der Graphik) 
+%zwischen Druckerraster und Postscriptraster.
+%
+%Postscriptraster des Loewen: 
+%    Abstand der Horizontalbalken = 32 Punkt (1/72 inch)
+%    Breite der Horizontalbalken  = 25 Punkt
+%    Hoehe der Figur (23 Balken): 22 x 32 + 25 = 729 Punkt
+%   
+%Neues Druckerraster des Loewen: 
+%    Abstand der Horizontalbalken = 32/72 inch x 0.0675 = (etwa) 9/300 inch 
+%    Breite der Horizontalbalken  = 25/72 inch x 0.0675 = (etwa) 7/300 inch 
+%    Hoehe der Figur (23 Balken): 22 x 9 +7 = 205/300 inch 
+%    Die 9/300 und 7/300 inch haben weniger als 0,5 % Fehler!
+%
+%
+%! define of new font
+%
+%.0675 .0675 scale      %SKALIERUNG AUF 17mm
+.2 .2 scale      %SKALIERUNG AUF
+
+newpath
+0 0 moveto          % Rahmenquadrat (fuer Skalierungsstest)
+0 3750 lineto 
+720 3750 lineto 
+720 0 lineto
+closepath 
+%stroke
+%0.1 setgray
+1 1 0 setrgbcolor
+fill
+%
+
+
+/mv { moveto } def        % Anfangspunkt eines Linienzuges
+/li { lineto } def        % Linienzug
+
+/a1 { 25 90 0 arcn } def    % Definition verschiedener Viertelkreise
+/a2 { 25 180 90 arcn } def  % {Radius Anfangswinkel Endwinkel}, Uhrzeigersinn
+/a3 { 25 270 180 arcn } def
+/a4 { 25 360 270 arcn } def
+/ab { 25 314 225 arcn } def
+/ar { 25 45 315 arcn } def
+/al { 25 225 135 arcn } def
+/at { 25 135 45 arcn } def
+
+/fil { closepath fill } def  %Linienzug schliessen und ausfuellen
+
+/loewe1                               % Erste Teilfigur 
+{375 0 mv 350 25 a3 375 25 li fil
+410 57 a4 280 32 a2 fil
+330 64 a2 457 64 a1 fil
+326 96 a2 455 121 a4 fil
+350 128 a1 348 128 li 348 153 li fil
+493 153 a4 405 128 a2 fil
+393 185 a3 493 160 a1 fil
+382 217 a3 458 192 a1 fil
+451 224 mv 375 249 a3 476 249 li fil
+483 256 mv 357 256 li 382 281 li 508 281 li fil
+382 313 a3 483 288 a1 fil
+488 320 mv 357 345 a3 469 345 li fil
+464 352 mv 325 377 a3 445 377 li fil
+421 409 mv 440 384 li 293 384 li 254 380 ab 283 409 li fil
+416 441 a4 280 416 li 209 380 ab 270 441 li fil
+437 473 a4 267 448 li 164 380 ab 257 473 li fil
+456 505 a4 254 480 li 222 448 li 205 466 li 244 505 li fil
+216 442 mv 93 354 ab 181 442 li fil			%17a
+463 537 a4 251 512 li 276 537 li fil
+476 569 a4 306 569 a3 fil
+472 601 a4 369 576 li 369 601 li fil
+235 601 a3 333 576 a1 fil
+235 608 a2 237 633 li 237 608 li fil
+369 633 mv 369 608 li 280 633 a3 fil
+456 633 a4 375 608 li 400 633 li fil
+448 665 a4 306 640 a2 fil
+425 672 mv 321 672 li 296 697 li 451 697 li fil
+289 704 mv 264 729 li 301 704 a1 fil
+373 704 a2 373 704 a1 fil
+479 729 mv 454 704 li 450 704 a2 fil
+500 681 mv 500 681 25 45 90 arc fil			%16a
+541 712 ar 500 636 li 500 671 li fil
+541 667 ar 525 616 al fil
+531 577 al 553 634 li 570 616 li fil
+612 658 mv 615 666 25 38 98 arc fil
+517 517 al 575 610 li 593 593 li fil
+627 627 al 658 693 ar fil
+482 437 al 658 648 ar fil} def
+/loewe2                            % Zweite Teilfigur
+{467 413 ab 534 480 ar fil			%10b
+486 385 ab 536 435 ar fil
+505 359 ab 536 390 ar fil
+593 538 ab 661 606 ar fil
+633 497 al 651 550 ar fil
+633 452 al 661 515 ar fil
+524 332 ab 593 366 at fil				%7a
+633 406 al 676 484 ar fil
+542 305 ab 671 434 ar fil
+590 273 al 666 384 ar fil
+481 244 mv 513 276 li 530 258 li 498 226 li fil
+535 252 mv 570 252 li 520 238 ab fil
+571 208 mv 536 208 li 590 262 ar fil
+617 289 mv %     617 289 25 0 45 arc fil
+           634 306 17 -90 45 arc fil       %korr. Segment 52
+600 192 mv 575 167 li 575 203 li 600 227 li fil
+317 170 ab 349 202 li 366 185 li fil			%8a
+277 176 ab 338 237 li 355 219 li fil
+210 155 ab 352 297 li 368 278 li fil
+205 195 ab 331 321 li 347 302 li fil
+135 170 ab 211 246 li 246 246 li fil
+276 276 al 310 345 li 326 326 li fil
+155 200 al 186 266 ar fil
+263 308 al 262 342 li 297 342 li fil
+120 210 al 193 318 ar fil
+140 275 mv 123 293 li 142 277 at fil
+136 442 mv 171 442 li 106 377 al fil			%18a
+236 542 mv 253 524 li 181 487 ab fil
+213 565 mv 231 547 li 161 512 ab fil
+116 467 ar 47 363 al fil
+45 406 al 101 497 ar fil
+156 552 ab 192 588 li 209 570 li fil
+58 464 mv 41 481 li 60 466 at fil
+109 550 ab 172 613 ar fil
+123 574 al 193 679 ar fil
+145 676 ar 80 611 ab fil
+140 681 at 56 597 al fil
+78 664 mv 61 682 li 80 666 at fil} def
+
+/loewe {loewe1 loewe2} def
+
+0 1 0 setrgbcolor
+0 3000 translate loewe
+
+%0 0 moveto loewe
+%showpage     %fuer EPS auskommentieren

@@ -1,0 +1,52 @@
+
+im Gegensatz zu Bildern haben Tabellen \textbf{grundsätzlich} Überschriften!
+\begin{table}[b]
+ %Auch hier unterschiedliche Texte fÃÂ¼r ÃÂberschrift und Verzeichnis:
+  \caption[Die erste Tabelle hier]{Eine Tabelle mit linksb\"undiger, 
+zentrierter und rechtsb\"undiger Spalte. Sie steht wegen des $[b]$ (von bottom) unten auf der Seite.
+%Sie steht als erstes auf dieser 
+%Seite, obwohl sie im Quelltext nach \autoref{fig:sinus} und \autoref{fig:sinus2} steht.
+}
+  \centering
+  \begin{tabular}{|l||c|r|}
+  \hline
+    A & B & $\Gamma$\\
+    \hline
+    \hline
+    \hline
+    ddd & eee & $\pi$\\
+    \hline
+    $\Pi$ & h & iiii\\
+  \hline 
+  \end{tabular}\label{tab:table2}
+\end{table}
+\begin{table}[t]
+\caption[Zwei Tabellen nebeneinander]{Hier sind 2 Tabellen mit Minipages nebeneinander gesetzt. Wie die Minipages intern/extern stehen kann man 
+setzen. Die Breiten kann man per Hand setzten oder automatisch.\\ In der linken Tabelle sind Zahlen sehr gut vergleichbar sind. Der Befehl \mbox{@\{\}} unterdrückt hier Zwischenräume. Diese Tabelle ist zentriert.\\
+In der rechten Tabelle ist eine Zeilenhöhe künstlich, durch einen unsichtbaren Maßstab verändert. Hier sind in einer Zeile auch Spalten zusammengefasst.}
+\begin{minipage}{3cm}
+% die Breite der Minipage muss spezifiziert werden
+\centering
+\begin{tabular}{r@{}c@{}l@{}}
+\hline 100 & , & 1 \\ 
+\hline 10 & , & 01 \\ 
+\hline 1 & , & 001 \\ 
+\hline 
+\end{tabular} 
+\end{minipage}
+% diese Befehler erlauben horizontales schieben
+% \hfill
+\hspace*{3cm}
+\begin{minipage}[t][3cm][r]{0.5\textwidth}
+% in den eckigen klammern stehen optional 
+% äußere Position, Höhe, innere Position
+%\flushleft/right erlaubt auch Positionsbestimmung
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+%rule{Breite}{Höhe} setzt einen nicht sichtbaren Maßstab (Breite 0) ein
+\rule{0cm}{3cm}  1& 2& 3& 4& 5 \\\hline
+  Spalte 1 & \multicolumn{3}{|c|}{|Spalte 2--4} & Spalte 5\\
+ \hline
+\end{tabular}
+\end{minipage}\label{tab:table}
+\end{table}

@@ -1,0 +1,74 @@
+% Diese Datei erzeugt die typische Uni-Wuppertal Titelseite bestehend 
+% aus dem gelben Streifen mit dem Bergischen Löwen,
+% dem Schriftzug "Fakultät ..." sowie Namen und Titeln
+
+
+
+\begin {titlepage}
+
+\unitlength1mm
+\begin{picture}(150,205)(0,40)
+
+
+\put(0,150){\includegraphics[height=10cm]{boxleo}}
+
+% Trick: 5cm hohe Box mit linken umteren Punkt 5cm unterhalb 
+% von Oberkante des Streifens => Oberkante text = Oberkante Balken
+
+% Unabhängigigkeit von UTF8 oder LATIN: Universit"at
+\put(25,200){\parbox[b][5cm][t]{20cm}{\textsc{\large 
+Bergische Universit\"at Wuppertal \\
+Fakultät für \\
+{\it Mathematik und  Naturwissenschaften} \\ 
+Fachgruppe Physik \\ 
+~\\
+Fortgeschrittenen Praktikum}}}
+
+
+
+
+\put (25,185.0){\parbox[b]{20cm}{ \Large \bf \titel}}
+
+
+
+\put (25,152) {\parbox[b]{20cm}{\large \bf \autoren}}
+
+\put (25,125) {\parbox[t]{11cm}{\large \bf Abstract (Kurzbeschreibung) \\
+                                \normalsize\rm
+                                \abstracttext}}
+
+\put (25,60) {Abgabedatum: \datum}
+\put (25,65) {Betreuer: \betreuer}
+
+
+
+\put (22,30)
+{
+%  \fbox{
+%    \begin{turn}{-90}
+    \begin{tabular}{|l|c|l|c|}
+    \hline
+    Bewertung Protokoll   & max. \% & +/0/- &  erreicht  \% \\  \hline \hline
+    Formales              & 6      &       & \\ \hline
+    Einleitung \& Theorie &  6     &       & \\  \hline        
+    Durchf\"uhrung        &        &       & \\
+    Auswertung		      & 33     &       & \\ 
+    phys. Diskussion      &        &       & \\ 
+    Zusammenfassung       &        &       & \\ \hline \hline
+    Qualit"at der Messung & 15     &       & \\ \hline
+    \end{tabular}
+    
+%    \end{turn}
+%  }
+}
+
+\end {picture}
+\end {titlepage}
+
+
+
+
+
+
+
+

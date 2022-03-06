@@ -1,0 +1,74 @@
+% Diese Datei erzeugt die typische Uni-Wuppertal Titelseite bestehend 
+% aus dem gelben Streifen mit dem schwarzen Löwen,
+% dem Schriftzug "Fachbereich ..." sowie Namen und Titeln
+
+
+
+\begin {titlepage}
+
+\unitlength1mm
+\begin{picture}(150,205)(0,40)
+
+
+\put(0,150){\includegraphics[height=10cm]{boxleo}}
+
+% Trick: 5cm hohe Box mit linken umteren Punkt 5cm unterhalb 
+% von Oberkante des Streifens => Oberkante text = Oberkante Balken
+
+% Unabhängigigkeit von UTF8 oder LATIN: Universit"at
+\put(25,200){\parbox[b][5cm][t]{20cm}{\textsc{\large 
+Bergische Universit\"at Wuppertal \\
+Fachbereich C \\
+{\it Mathematik und  Naturwissenschaften} \\ 
+Fachgruppe Physik \\ 
+~\\
+Fortgeschrittenen Praktikum}}}
+
+
+
+
+\put (25,185.0){\parbox[b]{20cm}{ \Large \bf \titel}}
+
+
+
+\put (25,152) {\parbox[b]{20cm}{\large \bf \autoren}}
+
+\put (25,120) {\parbox[b]{11cm}{\large \bf Abstract \\
+                                \normalsize\rm
+                                \abstracttext}}
+
+\put (25,60) {Abgabedatum: \datum}
+\put (25,65) {Betreuer: \betreuer}
+
+
+
+\put (22,30)
+{
+%  \fbox{
+%    \begin{turn}{-90}
+    \begin{tabular}{|l|c|l|c|}
+    \hline
+    Bereich               & max. \% & +/0/- &  erreicht  \% \\  \hline \hline
+    Einleitung \& Theorie & 15     &       & \\                \hline
+    Durchf\"uhrung        &        &       & \\
+    Auswertung		      & 70     &       & \\ 
+    phys. Diskussion      &        &       & \\ 
+    Zusammenfassung       &        &       & \\ \hline
+    Formales              & 15     &       & \\ \hline \hline
+    Note			      & \multicolumn{3}{|c|}{\quad} \\ \hline
+    \end{tabular}
+    
+%    \end{turn}
+%  }
+}
+
+\end {picture}
+\end {titlepage}
+
+
+
+
+
+
+
+

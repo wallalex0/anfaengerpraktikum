@@ -1,0 +1,56 @@
+% Dieses TeX-Dokument ist utf-8 codiert. (Linux)
+\documentclass[11pt,titlepage,a4,leqno] {scrartcl}
+% 11pt charactergröße
+% a4 mit Titelseite
+% gleichungsnummern ungewöhnlicherweise links (alternativ reqno)
+
+% in packages.tex sind die benutzten Pakete zusammengefasst
+\input{packages}
+%######################################################################
+% definiere NEUE Kommandos für die standard Titelseite
+% Details dazu finden sich in titlepage.tex 
+\newcommand{\titel} {Mein erster FP-Versuch}
+\newcommand{\autoren}{Walther Stern und Otto Gerlach}
+\newcommand{\betreuer}{Helmut Merkel M.Sc., Dr. Angela Kohl }
+\newcommand{\datum}{\today} %datum von heute
+% hier steht der Text Ihres Abstracts
+\newcommand{\abstracttext}
+{ 
+   ~\\
+   Ein Abstract ist eine gek\"urzte pr\"azise Darstellung des Inhalts einer Veröffentlichung. 
+   Insbesondere werden hier die wichtigsten Resultate angegeben.\\
+   Die Erdbeschleunigung wurde gemessen zu:
+   % hier ist ein mathematischer Ausdruck
+   \center{$g=9,81\pm 0,03_{stat.}\pm 0,02_{syst.}{\mathrm{\frac{m}{s^2}}}$}
+}
+\begin{document}                                       
+%\pagestyle{empty} %damit kann man Seitennumerierung ausschalten
+% über \input{filename} kann man einen File einbinden.
+% Das wir hier nur genutzt um Das Dokument übersichtlicher zu machen.
+% spezielle Titelseite für das FP
+\input{titlepage}
+
+% wenn ein Inhalts-, Bilder-, Tabellenverzeichnis gewünscht ist
+\input{verzeichnisse}
+
+% wie macht man Kapitel und Unterkapitel?
+\input{sections}
+
+% wie bindet man Bilder ein
+\input{grafiken}
+
+% wie macht man Tabellen
+\input{tabellen}
+
+% das wichtigste zu Formeln
+\input{formeln}
+
+%\input{rest}
+%das drückt den Rest nach unten auf die Seite
+\vfill
+
+\input{literatur}
+
+\end{document}
+
+
