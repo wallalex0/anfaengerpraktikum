@@ -14,6 +14,8 @@ messwerte = False
 
 files = ["kappa1", "kappa2", "kappa3"]
 
+names = ["Kappa 1,2 ", "kappa Theorie", "Kappa +,-"]
+
 file_name = ""
 for name in files:
     if files.index(name) == 0:
@@ -55,7 +57,7 @@ for name in files:
     if messwerte:
         name = name + "_messwerte"
 
-    axis.scatter(x, y, label="Datenpunkte")
+    axis.scatter(x, y, label=names[files.index(name)])
 
     if not messwerte:
         linear_model = np.polyfit(x, y, 1)
