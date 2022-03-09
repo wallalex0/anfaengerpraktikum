@@ -5,16 +5,14 @@ import math
 x_data_unit = ""
 y_data_unit = ""
 
-x_graph_unit = ""
+x_graph_unit = "m²"
 y_graph_unit = ""
-
 
 messwerte = False
 
-
 files = ["kappa1", "kappa2", "kappa3"]
 
-names = ["Kappa 1,2 ", "kappa Theorie", "Kappa +,-"]
+names = ["κ 1,2 ", "κ Theorie", "κ +,-"]
 
 file_name = ""
 for name in files:
@@ -30,7 +28,7 @@ figure = plot.figure(num=file_name)
 axis = plot.axes()
 
 axis.set_xlabel('z² in m²')
-axis.set_ylabel('K in ...')
+axis.set_ylabel('K')
 
 for name in files:
     x = []
@@ -68,7 +66,17 @@ for name in files:
         x_s_step = (x[-1] - x[0]) / 100
         x_s = np.arange(x[0] - x_s_step * 10, x[-1] + x_s_step * 20, x_s_step)
 
-        plot.plot(x_s, linear_model_fn(x_s), label=f"Steigung: {str(round(float(linear_model[0]), 4))}{y_graph_unit}/{x_graph_unit}\nY-Abschnitt: {str(round(float(linear_model[1]), 4))}{y_graph_unit}")
+        # label = ""
+        # if x_graph_unit == '' and y_graph_unit == '':
+        #     label = f"Steigung: {str(round(float(linear_model[0]), 4))}\nY-Abschnitt: {str(round(float(linear_model[1]), 4))}"
+        # elif x_graph_unit != '' and y_graph_unit != '':
+        #     label = f"Steigung: {str(round(float(linear_model[0]), 4))}{y_graph_unit}/{x_graph_unit}\nY-Abschnitt: {str(round(float(linear_model[1]), 4))}{y_graph_unit}"
+        # elif y_graph_unit == '':
+        #     label = f"Steigung: {str(round(float(linear_model[0]), 4))} 1/{x_graph_unit}\nY-Abschnitt: {str(round(float(linear_model[1]), 4))}"
+        # elif x_graph_unit == '':
+        label = f"Steigung: {str(round(float(linear_model[0]), 4))}\nY-Abschnitt: {str(round(float(linear_model[1]), 4))}"
+
+        plot.plot(x_s, linear_model_fn(x_s), label=label)
 
     if x_error or y_error:
         plot.errorbar(x, y, xerr=x_error, yerr=y_error, fmt='o', elinewidth=2)
