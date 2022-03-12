@@ -7,17 +7,11 @@ def linear_fit(x, m, c):
     return m * x + c
 
 
-# files = ["temp1_1", "temp1_2"]
-# files = ["temp2_blei_1", "temp2_blei_2"]
-# files = ["temp2_glas_1", "temp2_glas_2"]
-# files = ["temp2_kupfer_1", "temp2_kupfer_2"]
-files = ["temp4_1", "temp4_2"]
-
-# file_name = "temp_teilversuch_1"
-# file_name = "temp_teilversuch_2_blei"
-# file_name = "temp_teilversuch_2_kupfer"
-# file_name = "temp_teilversuch_2_kupfer"
-file_name = "temp_teilversuch_4"
+# files = ["temp_teilversuch_1", "temp1_1", "temp1_2"]
+files = ["temp_teilversuch_1", "temp_teilversuch_2_blei", "temp2_blei_1", "temp2_blei_2"]
+# files = ["temp_teilversuch_2_kupfer", "temp2_glas_1", "temp2_glas_2"]
+# files = ["temp_teilversuch_2_kupfer", "temp2_kupfer_1", "temp2_kupfer_2"]
+# files = ["temp_teilversuch_4", "temp4_1", "temp4_2"]
 
 names = ["Vorkurve", "Nachkurve"]
 
@@ -27,7 +21,7 @@ y_data_unit = "°C"
 x_graph_unit = "s"
 y_graph_unit = "°C"
 
-figure = plot.figure(num=file_name)
+figure = plot.figure(num=files[0])
 
 axis = plot.axes()
 
@@ -43,7 +37,7 @@ y_1_error = []
 
 last_point = []
 
-with open(files[0], "r", encoding="utf-8") as file:
+with open(files[1], "r", encoding="utf-8") as file:
     for line in file.readlines():
         temp = line.split(" ")
         x_1.append(float(temp[0].strip(x_data_unit)))
@@ -88,7 +82,7 @@ y_2_error = []
 
 first_point = []
 
-with open(files[1], "r", encoding="utf-8") as file:
+with open(files[2], "r", encoding="utf-8") as file:
     for line in file.readlines():
         temp = line.split(" ")
         x_2.append(float(temp[0].strip(x_data_unit)))
@@ -153,6 +147,6 @@ plot.grid(visible=True)
 
 plot.legend()
 
-plot.savefig(file_name)
+plot.savefig(files[0])
 
 plot.show()
