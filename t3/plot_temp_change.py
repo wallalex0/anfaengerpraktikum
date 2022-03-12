@@ -7,24 +7,25 @@ def linear_fit(x, m, c):
     return m * x + c
 
 
-files = ["temp1_1", "temp1_2"]
+# files = ["temp1_1", "temp1_2"]
 # files = ["temp2_blei_1", "temp2_blei_2"]
 # files = ["temp2_glas_1", "temp2_glas_2"]
 # files = ["temp2_kupfer_1", "temp2_kupfer_2"]
+files = ["temp4_1", "temp4_2"]
 
-file_name = "temp_teilversuch_1"
+# file_name = "temp_teilversuch_1"
 # file_name = "temp_teilversuch_2_blei"
 # file_name = "temp_teilversuch_2_kupfer"
 # file_name = "temp_teilversuch_2_kupfer"
+file_name = "temp_teilversuch_4"
 
+names = ["Vorkurve", "Nachkurve"]
 
 x_data_unit = "s"
 y_data_unit = "°C"
 
 x_graph_unit = "s"
 y_graph_unit = "°C"
-
-names = ["Vorkurve", "Nachkurve"]
 
 figure = plot.figure(num=file_name)
 
