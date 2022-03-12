@@ -141,7 +141,7 @@ print(f"Tn: {t_n:11.5f}")
 plot.hlines(t_1, last_point[0], x_s_2[-1], label=f"T1", linestyle="--", color='red', zorder=-1)
 plot.hlines(t_n, 0, first_point[0], label=f"Tn", linestyle="--", color='orange', zorder=-1)
 plot.vlines(extra_point, t_n, t_1, color='black', linestyle='--')
-plot.plot([last_point[0], first_point[0]], [t_1, t_n], 'black', marker='', label=f"Extrapolation")
+plot.plot([last_point[0], first_point[0]], [last_point[1], first_point[1]], 'black', marker='', label=f"Extrapolation")
 
 plot.grid(visible=True)
 
