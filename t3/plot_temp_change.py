@@ -8,8 +8,8 @@ def linear_fit(x, m, c):
 
 
 # files = ["temp_teilversuch_1", "temp1_1", "temp1_2"]
-files = ["temp_teilversuch_1", "temp_teilversuch_2_blei", "temp2_blei_1", "temp2_blei_2"]
-# files = ["temp_teilversuch_2_kupfer", "temp2_glas_1", "temp2_glas_2"]
+# files = ["temp_teilversuch_2_blei", "temp2_blei_1", "temp2_blei_2"]
+# files = ["temp_teilversuch_2_glas", "temp2_glas_1", "temp2_glas_2"]
 # files = ["temp_teilversuch_2_kupfer", "temp2_kupfer_1", "temp2_kupfer_2"]
 # files = ["temp_teilversuch_4", "temp4_1", "temp4_2"]
 
