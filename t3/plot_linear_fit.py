@@ -7,10 +7,7 @@ def linear_fit(x, m, c):
     return m * x + c
 
 
-files = ["temp3"]
-
-file_name = "temp_teilversuch_3"
-
+files = ["temp_teilversuch_3", "temp3"]
 
 x_data_unit = "s"
 y_data_unit = "°C"
@@ -18,7 +15,7 @@ y_data_unit = "°C"
 x_graph_unit = "s"
 y_graph_unit = "°C"
 
-figure = plot.figure(num=file_name)
+figure = plot.figure(num=files[0])
 
 axis = plot.axes()
 
@@ -32,7 +29,7 @@ y = []
 x_error = []
 y_error = []
 
-with open(files[0], "r", encoding="utf-8") as file:
+with open(files[1], "r", encoding="utf-8") as file:
     for line in file.readlines():
         temp = line.split(" ")
         x.append(float(temp[0].strip(x_data_unit)))
@@ -77,6 +74,6 @@ plot.grid(visible=True)
 
 plot.legend()
 
-plot.savefig(file_name)
+plot.savefig(files[0])
 
 plot.show()
