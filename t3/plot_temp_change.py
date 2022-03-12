@@ -11,9 +11,9 @@ def linear_fit(x, m, c):
 # files = ["temp_teilversuch_2_blei", "temp2_blei_1", "temp2_blei_2"]
 # files = ["temp_teilversuch_2_glas", "temp2_glas_1", "temp2_glas_2"]
 # files = ["temp_teilversuch_2_kupfer", "temp2_kupfer_1", "temp2_kupfer_2"]
-# files = ["temp_teilversuch_4", "temp4_1", "temp4_2"]
+files = ["temp_teilversuch_4", "temp4_1", "temp4_3", "temp4_2"]
 
-names = ["Vorkurve", "Nachkurve"]
+names = ["Vorkurve", "Nachkurve", "Mischvorgang"]
 
 x_data_unit = "s"
 y_data_unit = "°C"
@@ -65,7 +65,7 @@ out = model.fit(y_1, params, x=x_1)
 linear_model_1 = np.poly1d([out.params['m'].value, out.params['c'].value])
 
 print('-------------------------------')
-print('Parameter    Value       Stderr')
+print('Parameter     Wert       Fehler')
 for name, param in out.params.items():
     if param.stderr is not None:
         print(f'{name:7s} {param.value:11.5f} {param.stderr:11.5f}')
@@ -111,13 +111,37 @@ out = model.fit(y_2, params, x=x_2)
 linear_model_2 = np.poly1d([out.params['m'].value, out.params['c'].value])
 
 print('-------------------------------')
-print('Parameter    Value       Stderr')
+print('Parameter     Wert       Fehler')
 for name, param in out.params.items():
     if param.stderr is not None:
         print(f'{name:7s} {param.value:11.5f} {param.stderr:11.5f}')
     else:
         print(f'{name:7s} {param.value:11.5f} {0.0:11.5f}')
 print('-------------------------------')
+
+if len(files) == 4:
+    x_3 = []
+    y_3 = []
+
+    x_3_error = []
+    y_3_error = []
+    with open(files[3], "r", encoding="utf-8") as file:
+        for line in file.readlines():
+            temp = line.split(" ")
+            x_3.append(float(temp[0].strip(x_data_unit)))
+            y_3.append(float(temp[2].strip(y_data_unit)))
+            if temp[1] != '':
+                x_3_error.append(float(temp[1].strip(x_data_unit)))
+            if temp[3] != '':
+                y_3_error.append(float(temp[3].strip(y_data_unit)))
+
+    print("X-Werte:\n", x_3)
+    print("Y-Werte:\n", y_3)
+
+    print("X-Fehler-Werte:\n", x_3_error)
+    print("Y-Fehler-Werte:\n", y_3_error)
+
+    plot.errorbar(x_3, y_3, xerr=x_3_error, yerr=y_3_error, fmt='o', label=names[2], ms=0.5, zorder=100, capsize=2, capthick=0.75, elinewidth=0.75, color="purple")
 
 
 extra_point = last_point[0] + (first_point[0] - last_point[0]) / 2
