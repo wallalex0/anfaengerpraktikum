@@ -12,8 +12,6 @@ def non_linear_fit():
 
 
 files = ["kennline_teilversuch_5", "kennlinie5"]
-# files = ["kennline_teilversuch_6_1", "kennlinie6_1"]
-# files = ["kennline_teilversuch_6_2", "kennlinie6_2"]
 
 x_data_unit = "mA"
 y_data_unit = "V"
@@ -57,9 +55,11 @@ model = Model(linear_fit)
 
 params = model.make_params(m=0.2421, c=0.0017)
 
-out = model.fit(y, params, x=x)
+out = model.fit(y, params, x=x, weights=y_error)
 
-linear_model = np.poly1d([out.params['m'].value, out.params['c'].value])
+print(out.params)
+
+function_model = np.poly1d([out.params['m'].value, out.params['c'].value])
 
 print('-------------------------------')
 print('Parameter    Value       Stderr')
@@ -73,7 +73,7 @@ print('-------------------------------')
 x_s_step = (x[-1] - x[0]) / 100
 x_s = np.arange(x[0] - x_s_step * 20, x[-1] + x_s_step * 20, x_s_step)
 
-plot.plot(x_s, linear_model(x_s))
+plot.plot(x_s, function_model(x_s))
 
 
 plot.grid(visible=True)
